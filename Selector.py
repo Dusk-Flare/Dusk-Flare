@@ -1,5 +1,14 @@
+from tkinter.filedialog import askopenfilename
+import os
 
-from tkinter.filedialog import askdirectory
+dwc = os.getcwd()
+username = os.getlogin()
 
-path =  askdirectory()
-print(path)
+def Selector():
+    path =  askopenfilename(initialdir= fr"{dwc}\Themes", title="Select Theme")
+    ext = os.path.splitext(path)
+    if ext[1] == '.theme':
+        return path
+    else:
+        path = Selector()
+        return path

